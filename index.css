@@ -110,7 +110,7 @@ p {
 .page {
     z-index: 3;
     position: relative;
-    background-image: url(/src/666628.png);
+    background-image: url(./src/666628.png);
     font-family: 'Oswald', sans-serif;
     line-height: 1;
     margin: 0;
