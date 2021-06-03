@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>68 Lashes and Nails</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/css/checkout.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <div>
+            <a href="/"><img class="active logo" alt="logo" src="/src/logo.png" /></a>
+            <a href="/"><img class="mobileLogo" alt="logo" src="/src/logo_mobile.png"></a>
+        </div>
+        <div class="navMiddle" id="mytopnav">
+            <ul>
+                <li id="dropdownIcon"><a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a></li>
+                <li><a href="/html/checkout.html"><i class="fa fa-shopping-cart" style="font-size: 28px;"></i></a></li>
+                <li><a href="/html/shopping_page.html">Shop</a></li>
+                <li><a href="/html/Contact_Us.html">Contact details</a></li>
+                <li class="logged-in"><a href="#" id="logout">Logout</a></li>
+                <li class="logged-in" id="user-email"></li>
+                <li class="logged-out"><a href="#" class="modal-trigger" data-target="modal-login">Login</a></li>
+                <li class="logged-out"><a href="/html/signup.html" class="modal-trigger" data-target="modal-signup">Sign up</a></li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <!-- Side nav -->
+    <ul id="slide-out" class="sidenav">
+        <li>
+            <a href="/" style="height: 105px;"><img alt="logo" src="/src/logo.jpg" class="sideLogo"></a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a href="/html/checkout.html">Checkout</a></li>
+        <li><a href="/html/Contact_Us.html">Contact details</a></li>
+        <li><a href="/html/shopping_page.html">Shopping</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li class="logged-in"><a href="#" id="logout">Logout</a></li>
+        <li class="logged-in" id="user-email"></li>
+        <li class="logged-out"><a href="#" class="modal-trigger" data-target="modal-login">Login</a></li>
+        <li class="logged-out"><a href="/html/signup.html" class="modal-trigger" data-target="modal-signup">Sign up</a></li>
+    </ul>
+
+
+    <!-- social media icon -->
+    <div id="addon"></div>
+    <!-- webpage body -->
+    <div class="page">
+        <div class="layout">
+            <h1 class="heading">Your Cart</h1>
+            <!-- Shopping cart items list for later on -->
+            <div class="shopping">
+                <div class="products">
+                    <div id="payment-cart-list">
+                        <div class="cart-row top">
+                            <div class="cart-item ">
+                                <span class="cart-item-title">Item Name</span>
+                            </div>
+                            <span class="cart-price ">Price</span>
+                            <div class="cart-quantity ">
+                                <span class="cart-quantity-input quantity">Quantity</span>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="total-price">
+                    <h5>Total price:</h3>
+                        <span id="payment-total-price" class="cart-total-price">$0.0</span>
+                </div>
+            </div>
+            <!-- Delivery detail section -->
+            <h1 class="heading">Delivery details</h1>
+            <form id="checkout">
+                <div class="informationList">
+                    <span>Receiver name*</span>
+                    <input name="name" id="name" placeholder="Customer name" required="required">
+                    <span>Address*</span>
+                    <input type="text" id="address" name="address" placeholder="Delivery address" required="required">
+                    <span>Phone number</span>
+                    <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone number">
+                    <div class="inlineFlex">
+                        <input type="checkbox" id="savedetails">
+                        <p>Remember your details for next time?</p>
+                    </div>
+                </div>
+                <!-- Payment section -->
+                <h1 class="heading">Payment</h1>
+                <div class="paymentList">
+
+                    <h2 class="heading">Payment method</h2>
+                    <div class="paymentList">
+                        <div> <input type="radio" name="Credit cards" checked><span>Credit cards</span></div>
+                        <div> <input type="radio"><span>Internet Banking</span></div>
+                        <div><input type="radio"><span>Paypal</span></div>
+
+                    </div>
+                    <h2 class="heading">Credit card details</h2>
+                    <div class="empty"></div>
+                    <div class="cardDetails">
+                        <span>Card Number</span>
+                        <span>Card holder</span>
+                        <span>Exprire on</span>
+                        <span>CVC</span>
+                        <input type="text" id="cnum" placeholder="Card number" required="required">
+                        <input type="text" id="cname" placeholder="Name on card" required="required">
+                        <div class="monthYear">
+                            <input type="number" id="exp-month" maxlength="2" inputmode="numeric" placeholder="month" required="required">
+                            <input type="number" id="exp-year" maxlength="4" inputmode="numeric" placeholder="year" required="required">
+                        </div>
+                        <input type="text" id="cardPin" maxlength="3" inputmode="numeric" placeholder="CVC" required="required">
+                    </div>
+                    <div class="empty"></div>
+                    <div class="inlineFlex">
+                        <input type="text" placeholder="Discount code" id="discount-code">
+                        <p>Enter your voucher or discount code</p>
+                    </div>
+                    <div class="empty"></div>
+                </div>
+                <button type="submit" id="Confirm">Confirm Order</button>
+            </form>
+        </div>
+    </div>
+    <!-- Login -->
+    <div id="modal-login" class="modal">
+        <div class="modal-content">
+            <h4>Login</h4>
+            <form id="login-form">
+                <div class="input-field">
+                    <input type="email" id="login-email" required>
+                    <label>Email address</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="login-password" required>
+                    <label>Password</label>
+                </div>
+                <p class="error pink-text center-align"></p>
+                <div class="modal-footer">
+                    <button class="waves-effect waves-green btn-flat">login</button>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <!-- recall footer  -->
+    <div id="footer"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, 'left');
+        });
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyCwYYOybQZ8PT5ULjTCtUH9MCkaRWuHGEM",
+            authDomain: "web503-fe734.firebaseapp.com",
+            databaseURL: "https://web503-fe734.firebaseio.com",
+            projectId: "web503-fe734",
+            storageBucket: "web503-fe734.appspot.com",
+            messagingSenderId: "538541082408",
+            appId: "1:538541082408:web:d791646b62fd64b447721d",
+            measurementId: "G-ENDK1JP51S"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+        $(document).ready(function() {
+            $('#header').load("/header.html");
+            $('#footer').load("/footer.html");
+            $('#addon').load("/addon.html");
+        });
+    </script>
+    <script src="index.js" async defer></script>
+    <script src="/javascript/auth.js"></script>
+    <script src="/javascript/cart.js" async defer></script>
+
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+.layout {
+    margin: 0px 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+.informationList {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 500px;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+    font-size: 110%;
+}
+
+.cart-quantity {
+    display: grid;
+    grid-template-columns: auto 90px;
+    padding-bottom: 7px;
+}
+
+.cart-quantity-input {
+    width: 50px;
+}
+
+.quantity,
+.cart-item,
+.cart-price {
+    text-align: left;
+    padding: 10px;
+    font-size: 120%;
+    bottom: 0;
+}
+
+.cart-total-price {
+    text-align: right;
+    font-size: 130%;
+    padding: 23px 50px 0 0;
+}
+
+.top {
+    margin-bottom: 20px;
+    font: weight 20;
+    font-size: 130%;
+}
+
+.total-price {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 30px;
+}
+
+.cart-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 160px;
+}
+
+.btn-danger {
+    margin-top: 5px;
+}
+
+.payment {
+    background-color: green;
+}
+
+p {
+    margin: 0px;
+    margin-left: 6px;
+}
+
+.monthYear {
+    display: grid;
+    grid-template-columns: 60px 60px;
+    grid-template-rows: 30px;
+}
+
+#Confirm {
+    font-size: 110%;
+    background-color: rgb(254, 229, 222);
+    padding-top: 8px;
+    display: grid;
+    grid-template-columns: 190px;
+    grid-template-rows: 20px;
+    padding: 3px;
+}
+
+#Confirm:hover {
+    background-color: rgba(250, 203, 190);
+    text-decoration-color: black;
+}
+
+#discount-code {
+    max-width: 300px;
+}
+
+.inlineFlex {
+    margin-top: 20px;
+    padding-bottom: 0;
+    bottom: 0;
+}
+
+.paymentList {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    margin-bottom: 40px;
+}
+
+.cardDetails {
+    display: grid;
+    grid-template-columns: minmax(100px, 200px) minmax(80px, 100px) minmax(80px, 120px) 40px;
+    grid-template-rows: 40px 30px;
+    grid-gap: 7px;
+}
+
+@media screen and (max-width: 600px) {
+    .layout,
+    .informationList {
+        margin: 0 5px;
+        grid-template-columns: 1fr;
+    }
+    .cardDetails {
+        grid-gap: 0;
+    }
+    .monthYear {
+        grid-template-columns: minmax(30px, 40px) minmax(40px, 50px);
+    }
+}

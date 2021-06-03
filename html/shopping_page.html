@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>68 Lashes and Nails</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/css/shopping.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <div>
+            <a href="/"><img class="active logo" alt="logo" src="/src/logo.png" /></a>
+            <a href="/"><img class="mobileLogo" alt="logo" src="/src/logo_mobile.png"></a>
+        </div>
+        <div class="navMiddle" id="mytopnav">
+            <ul>
+                <li id="dropdownIcon"><a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a></li>
+                <li><a href="/html/checkout.html"><i class="fa fa-shopping-cart" style="font-size: 28px;"></i></a></li>
+                <li><a href="/html/shopping_page.html">Shop</a></li>
+                <li><a href="/html/Contact_Us.html">Contact details</a></li>
+                <li class="logged-in"><a href="#" id="logout">Logout</a></li>
+                <li class="logged-in" id="user-email"></li>
+                <li class="logged-out"><a href="#" class="modal-trigger" data-target="modal-login">Login</a></li>
+                <li class="logged-out"><a href="/html/signup.html" class="modal-trigger" data-target="modal-signup">Sign up</a></li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <!-- Side nav -->
+    <ul id="slide-out" class="sidenav">
+        <li>
+            <a href="/" style="height: 105px;"><img alt="logo" src="/src/logo.jpg" class="sideLogo"></a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a href="/html/checkout.html">Checkout</a></li>
+        <li><a href="/html/Contact_Us.html">Contact details</a></li>
+        <li><a href="/html/shopping_page.html">Shopping</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li class="logged-in"><a href="#" id="logout">Logout</a></li>
+        <li class="logged-in" id="user-email"></li>
+        <li class="logged-out"><a href="#" class="modal-trigger" data-target="modal-login">Login</a></li>
+        <li class="logged-out"><a href="/html/signup.html" class="modal-trigger" data-target="modal-signup">Sign up</a></li>
+    </ul>
+
+
+    <!-- social media icon -->
+    <div id="addon"></div>
+    <!-- webpage body -->
+    <div class="page">
+        <!-- list of products -->
+        <h1 class="middle heading"> Our Treatment</h1>
+        <hr>
+
+
+        <div class="container">
+            <div>
+                <div class="display">
+                    <div class="product">
+                        <a href="#"><img class="items" alt="SNS nails" src="/src/manicure.jpg"></a>
+                        <div class="description">
+                            <a href="#">Manicure</a>
+                            <hr>
+                            <div class="price">
+                                <p class="pricetag">Start at $30</p>
+                                <button onclick="addToCart('Manicure',30)" class="addCart">Add to cart</button>
+                            </div>
+                            <p>Our manicure keeps your hands looking great. First, your cuticles are pushed back and tidied and then your finger nails are cut and shaped. Secondly , we massage your arms and then finish by polishing your finger nails.</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <a href="#"><img class="items" alt="aryclic nails" src="/src/Pendicure.jpg"></a>
+                        <div class="description">
+                            <a href="#">Pendicure</a>
+                            <hr>
+                            <div class="price">
+                                <p class="pricetag">Start at $40</p>
+                                <button onclick="addToCart('Pendicure',40)" class="addCart">Add to cart</button>
+                            </div>
+                            <p>Our spa pedicure keeps your feet look great. Your feet are soaked in a whirlpool while your toe nails are trimmed, shaped and your cuticles are shaped with a full leg massage is given and then finish by polishing the toe nails.</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <a href="#"><img class="items" alt="waxing" src="/src/sns.jpg"></a>
+                        <div class="description">
+                            <a href="#">SNS Dipping Powder</a>
+                            <hr>
+                            <div class="price">
+                                <p class="pricetag">Start at $55</p>
+                                <button onclick="addToCart('SNS dipping powder',55)" class="addCart">Add to cart</button>
+                            </div>
+                            <p>SNS nails look virtually the same as shellac and acrylic nails, but the difference is in the technique used to create the finished product. Because the powder is coloured, no painting is required and there is zero dry time.</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <a href="#"><img class="items" alt="Eyeslashes extension" src="/src/how_to_do_acrylic_nails-450x375.jpg"></a>
+                        <div class="description">
+                            <a href="#">Acrylic Nails</a>
+                            <hr>
+                            <div class="price">
+                                <p class="pricetag">Start at $55</p>
+                                <button onclick="addToCart('Acrylic nails',55)" class="addCart">Add to cart</button>
+                            </div>
+                            <p>Acrylic Nails are for those people who bite or do not have strong, healthy nails. The acrylic nail is applied on the end of your natural nail, making them the length of your choice. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div>
+                <div class="display">
+                    <div class="product">
+                        <a href="#"><img class="items" alt="sns" src="/src/nails_art.jpg"></a>
+                        <div class="description">
+                            <a href="#">Nails Art</a>
+                            <hr>
+                            <div class="price">
+                                <p class="pricetag">Start at $5</p>
+                                <button onclick="addToCart('Nails art',5)" class="addCart">Add to cart</button>
+                            </div>
+                            <p>Your nails can be decorated with designs and colors that can range from plain prints and glitter to crystal and abstracts. Nail Art transforms nails through painting, embellishing, and/or decorating them.</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <a href="#"><img class="items" alt="gel" src="/src/gel_nails.png"></a>
+                        <div class="description">
+                            <a href="#">Gel Nails</a>
+                            <hr>
+                            <div class="price">
+                                <p class="pricetag">Start at $55</p>
+                                <button onclick="addToCart('Gel nails',55)" class="addCart">Add to cart</button>
+                            </div>
+                            <p>The gels come in an array of colours and apply like polish, with twist cap and applicator, but are cured in a LED lamp in 30 seconds or in two minutes in traditional UV lamps, just like gels.</p>
+                        </div>
+
+                    </div>
+                    <div class="product">
+                        <a href="#"><img class="items" alt="for lashes" src="/src/waxing.jpg"></a>
+                        <div class="description">
+                            <a href="#">Waxing</a>
+                            <hr>
+                            <div class="price">
+                                <p class="pricetag">Start at $5</p>
+                                <button onclick="addToCart(`Waxing service`,5)" class="addCart">Add to cart</button>
+                            </div>
+                            <p>Our waxing service offers you a clean and stunning looks. At the moment, we are focusing on facial waxing but body waxing will be avaliable soon in the future</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <a href="#"><img class="items" alt="eyelashes" src="/src/beauty_1580468424677.jpeg"></a>
+                        <div class="description">
+                            <a href="#">Eyelashes Extension</a>
+                            <hr>
+                            <div class="price">
+                                <p class="pricetag">start at $90</p>
+                                <button onclick="addToCart(`Eyeslashes Extension`,90)" class="addCart">Add to cart</button>
+                            </div>
+                            <p>Your eyeslashes can be extended to have a more nature or attractive looks. We have the options of different volumes, adding colors or simply removal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login -->
+    <div id="modal-login" class="modal">
+        <div class="modal-content">
+            <h4>Login</h4>
+            <form id="login-form">
+                <div class="input-field">
+                    <input type="email" id="login-email" required>
+                    <label>Email address</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="login-password" required>
+                    <label>Password</label>
+                </div>
+                <p class="error pink-text center-align"></p>
+                <div class="modal-footer">
+                    <button class="waves-effect waves-green btn-flat">login</button>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <!-- recall footer  -->
+    <div id="footer"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, 'left');
+        });
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyCwYYOybQZ8PT5ULjTCtUH9MCkaRWuHGEM",
+            authDomain: "web503-fe734.firebaseapp.com",
+            databaseURL: "https://web503-fe734.firebaseio.com",
+            projectId: "web503-fe734",
+            storageBucket: "web503-fe734.appspot.com",
+            messagingSenderId: "538541082408",
+            appId: "1:538541082408:web:d791646b62fd64b447721d",
+            measurementId: "G-ENDK1JP51S"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+        $(document).ready(function() {
+            $('#header').load("/header.html");
+            $('#footer').load("/footer.html");
+            $('#addon').load("/addon.html");
+        });
+    </script>
+    <script src="index.js" async defer></script>
+    <script src="/javascript/auth.js"></script>
+    <script src="/javascript/addToCart.js" async defer></script>
+
+</body>
+
+</html>

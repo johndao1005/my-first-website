@@ -1,0 +1,85 @@
+div.footerAddress {
+    display: none;
+}
+
+input {
+    height: 27px;
+}
+
+img.footerLogo {
+    margin: 60px;
+}
+
+.page {
+    padding: 10px 40px;
+}
+
+p,
+.businessHours {
+    line-height: 25px;
+    font-size: 120%;
+}
+
+
+/* contact form */
+
+.cart-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.contactForm {
+    margin: 10px auto 20px 0px;
+    max-width: 600px;
+}
+
+#contactForm {
+    display: grid;
+    grid-template-columns: minmax(250px, 800px);
+    grid-template-rows: auto;
+    grid-gap: 0.5rem;
+    font-size: 130%;
+}
+
+#message {
+    height: 100px;
+}
+
+.sendBtn {
+    background-color: rgba(254, 229, 222);
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 200px;
+    height: 35px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.sendBtn:hover,
+.sendBtn:after {
+    border-radius: 5px;
+    background-color: rgba(250, 203, 190);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+iframe {
+    margin: 20px auto;
+    border: 0.5mm thin black;
+    width: 500px;
+    height: 450px;
+}
+
+@media screen and (max-width: 550px) {
+    .longtext {
+        display: none;
+    }
+    iframe {
+        width: 100%;
+        height: 300px;
+    }
+}
