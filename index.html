@@ -82,7 +82,7 @@
         <div class="section1">
             <a href="/"><img class="top_pic" alt="front page picture" src="https://img1.wsimg.com/isteam/stock/DxAr7Bw/"></a>
             <!-- resized picture which will replace the main one when the screen smaller -->
-            <a href="/"><img class="top_picsmall" alt="front page picture" src="/src/317_main.jpg"></a>
+            <a href="/"><img class="top_picsmall" alt="front page picture" src="./src/317_main.jpg"></a>
         </div>
         <!-- Making a booking button for resized screen -->
         <a class="button2" href="./html/Contact_Us.html">Make a Booking</a>
@@ -94,41 +94,41 @@
         <div class="slideshow">
             <!-- prev button -->
             <div>
-                <a class="prev" onclick="plusSlides(-1)"><img alt="prev icon" src="gi/src/icons8-back-to-64.png"></a>
+                <a class="prev" onclick="plusSlides(-1)"><img alt="prev icon" src="./src/icons8-back-to-64.png"></a>
             </div>
             <!-- slide show content -->
             <div class="slideshow-container">
                 <div class="mySlides fade">
-                    <img class="img" alt="slide show pic" src="/src/sample2.jpg">
+                    <img class="img" alt="slide show pic" src="./src/sample2.jpg">
                 </div>
 
                 <div class="mySlides fade">
-                    <img class="img" alt="slide show pic" src="/src/sample5.jpg">
+                    <img class="img" alt="slide show pic" src="./src/sample5.jpg">
                 </div>
 
                 <div class="mySlides fade">
-                    <img class="img" alt="slide show pic" src="/src/sample1.jpg">
+                    <img class="img" alt="slide show pic" src="./src/sample1.jpg">
                 </div>
 
                 <div class="mySlides fade">
-                    <img class="img" alt="slide show pic" src="/src/beauty_1580468424677.jpeg">
+                    <img class="img" alt="slide show pic" src="./src/beauty_1580468424677.jpeg">
                 </div>
 
                 <div class="mySlides fade">
-                    <img class="img" alt="slide show pic" src="/src/sample3.jpg">
+                    <img class="img" alt="slide show pic" src="./src/sample3.jpg">
                 </div>
 
                 <div class="mySlides fade">
-                    <img class="img" alt="slide show pic" src="/src/Pendicure_2.jpg">
+                    <img class="img" alt="slide show pic" src="./src/Pendicure_2.jpg">
                 </div>
 
                 <div class="mySlides fade">
-                    <img class="img" alt="slide show pic" src="/src/sample4.jpg">
+                    <img class="img" alt="slide show pic" src="./src/sample4.jpg">
                 </div>
             </div>
             <div>
                 <!-- next button -->
-                <a><img alt="next icon" class="next" onclick="plusSlides(1)" src="/src/icons8-next-page-64.png"></a>
+                <a><img alt="next icon" class="next" onclick="plusSlides(1)" src="./src/icons8-next-page-64.png"></a>
             </div>
         </div>
         <!-- slide show dot to check specific picture -->
@@ -208,14 +208,14 @@
         const db = firebase.firestore();
         const auth = firebase.auth();
         $(document).ready(function() {
-            $('#header').load("/header.html");
-            $('#footer').load("/footer.html");
-            $('#addon').load("/addon.html");
+            $('#header').load("./header.html");
+            $('#footer').load("./footer.html");
+            $('#addon').load("./addon.html");
         });
     </script>
-    <script src="index.js" async defer></script>
-    <script src="/javascript/auth.js"></script>
-    <script src="/javascript/subscribe.js" async defer></script>
+    <script src="./index.js" async defer></script>
+    <script src="./javascript/auth.js"></script>
+    <script src="./javascript/subscribe.js" async defer></script>
 </body>
 
 </html>
