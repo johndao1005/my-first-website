@@ -29,8 +29,8 @@
 <body>
     <nav class="nav">
         <div>
-            <a href="/"><img class="active logo" alt="logo" src="../src/logo.png" /></a>
-            <a href="/"><img class="mobileLogo" alt="logo" src="../src/logo_mobile.png"></a>
+            <a href="../index.html"><img class="active logo" alt="logo" src="../src/logo.png" /></a>
+            <a href="../index.html"><img class="mobileLogo" alt="logo" src="../src/logo_mobile.png"></a>
         </div>
         <div class="navMiddle" id="mytopnav">
             <ul>
@@ -50,7 +50,7 @@
     <!-- Side nav -->
     <ul id="slide-out" class="sidenav">
         <li>
-            <a href="/" style="height: 105px;"><img alt="logo" src="../src/logo.jpg" class="sideLogo"></a>
+            <a href="../index.html" style="height: 105px;"><img alt="logo" src="../src/logo.jpg" class="sideLogo"></a>
         </li>
         <li>
             <div class="divider"></div>
@@ -196,7 +196,6 @@
         const db = firebase.firestore();
         const auth = firebase.auth();
         $(document).ready(function() {
-            $('#header').load("../header.html");
             $('#footer').load("../footer.html");
             $('#addon').load("../addon.html");
         });
